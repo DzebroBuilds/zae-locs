@@ -17,6 +17,9 @@
 .hero-light-scene .hero-intro p { color: #fffefa; max-width: 33ch; }
 .hero-light-scene h1 { margin: 0; font-size: 11.55vw; color: #fffefa; }
 .hero .hero-photo { margin-top: 20px; }
+.hero-light-scene #hero-title { font-size: 64px; line-height: 1.1; letter-spacing: -.025em; }
+.hero-title-container { display: block; }
+.hero-title-still { font-family: 'Roboto Flex', sans-serif; font-size: 64px; font-variation-settings: 'wght' 400, 'opsz' 9; }
 .hero-glass-booking {
   position: absolute;
   top: 230px;
@@ -63,6 +66,8 @@
   .hero-light-scene .hero-intro p { font-size: 17px; }
   .hero-light-scene .hero-intro p:last-child { font-size: 15px; margin-top: 26px; }
   .hero-light-scene h1 { font-size: 10.2vw; }
+  .hero-light-scene #hero-title { font-size: clamp(38px, 10vw, 64px); }
+  #hero-title .variable-proximity-demo, #hero-title .hero-title-still { font-size: inherit !important; }
   .hero-glass-booking { top: 270px; left: 18px; width: min(320px, calc(100% - 36px)); }
   .rays-toggle { right: 12px; bottom: 14px; }
 }

@@ -11,3 +11,5 @@ Polish applies Impeccable and Emil design engineering guidance directly. Impecca
 The hero uses the user-requested React Bits LightRays: blue #3b82f6 on a dark navy 600px stage. This explicit effect overrides the evergreen-only accent guidance in this region. Use the original component source and keep custom integration in the wrapper.
 
 The user requested GlassSurface for the hero. Use the 320×76 rounded surface as a real booking control over the blue rays, preserving legible text and keyboard focus. This explicit glass request overrides the general preference for flat surfaces in this specific control. Keep the registry component source unchanged.
+
+The user requested VariableProximity on the hero title. Roboto Flex replaces the display face in this title only so its weight and optical-size axes can respond to proximity. Preserve the brand label, requested interaction configuration, and reduced-motion fallback.

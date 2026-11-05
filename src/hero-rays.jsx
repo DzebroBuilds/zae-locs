@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import LightRays from './components/LightRays';
 import GlassSurface from './components/GlassSurface';
+import VariableProximity from './components/VariableProximity';
 import './hero-rays.css';
 
 function HeroRays() {
@@ -69,3 +70,33 @@ function HeroRays() {
 
 const mount = document.getElementById('hero-rays');
 if (mount) createRoot(mount).render(<HeroRays />);
+
+function HeroTitle() {
+  const containerRef = useRef(null);
+  const [reduced, setReduced] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  useEffect(() => {
+    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const update = event => setReduced(event.matches);
+    preference.addEventListener('change', update);
+    return () => preference.removeEventListener('change', update);
+  }, []);
+  return <span ref={containerRef} className="hero-title-container" style={{ position: 'relative' }}>
+    {reduced ? <span className="hero-title-still">ZAE LOCS</span> : <VariableProximity
+      label="ZAE LOCS"
+      className="variable-proximity-demo"
+      fromFontVariationSettings="'wght' 400, 'opsz' 9"
+      toFontVariationSettings="'wght' 1000, 'opsz' 40"
+      containerRef={containerRef}
+      radius={100}
+      falloff="linear"
+      smoothing={0.2}
+      scale={1}
+      lift={0}
+      idleWave={false}
+      fontSize={64}
+    />}
+  </span>;
+}
+
+const title = document.getElementById('hero-title');
+if (title) createRoot(title).render(<HeroTitle />);
