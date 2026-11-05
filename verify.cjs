@@ -1,0 +1,22 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const fake=()=>({innerHTML:'',textContent:'',value:'',hidden:false,classList:{add(){},remove(){},toggle(){}},focus(){},setAttribute(){},addEventListener(){},showModal(){},close(){}});
+const map=new Map();const document={querySelector(s){if(!map.has(s))map.set(s,fake());return map.get(s)},querySelectorAll(){return []}};
+const sandbox={document,localStorage:{getItem(){return null},setItem(){}},window:{},console,setTimeout,clearTimeout,Intl,Date};
+vm.createContext(sandbox);vm.runInContext(fs.readFileSync('dist/app.js','utf8'),sandbox);
+vm.runInContext(`
+const assertResult=(v,msg)=>{if(!v)throw Error(msg)};
+assertResult(!available(today,0).includes(540),'occupied appointment time was offered');
+assertResult(available(future(20),0).includes(540),'open appointment time missing');
+assertResult(available(future(20),4).every(t=>t+services[4].duration<=1140),'service runs after studio hours');
+assertResult(audience('opening').every(c=>c.optin),'unsubscribed client in audience');
+assertResult(audience('retwist').every(c=>!data.appointments.some(a=>a.clientId===c.id&&a.date>=today&&a.status==='Confirmed')),'booked client in retwist audience');
+assertResult(esc('<script>')==='&lt;script&gt;','client text not escaped');
+assertResult(data.appointments.filter(a=>a.date===today).reduce((n,a)=>n+services[a.service].price,0)===365,'overview total does not reconcile');
+bookingStep=2;bookingTime=540;renderBooking();
+document.querySelector('#bookName').value='Demo Tester';document.querySelector('#bookPhone').value='2065550100';document.querySelector('#bookEmail').value='demo@example.com';document.querySelector('#bookConsent').checked=true;document.querySelector('#bookAck').checked=true;
+document.querySelector('#bookName').oninput();document.querySelector('#bookBack').onclick();document.querySelector('#bookNext').onclick();
+assertResult(document.querySelector('#bookingContent').innerHTML.includes('value="Demo Tester"'),'back navigation lost the name');
+assertResult(document.querySelector('#bookingContent').innerHTML.includes('value="demo@example.com"'),'back navigation lost the email');
+assertResult(document.querySelector('#bookingContent').innerHTML.includes('id="bookConsent" type="checkbox" checked'),'back navigation lost the consent choice');
+console.log('Passed: booking form retention,  time conflicts, available slots, closing hours, consent filters, booked-client exclusion, text escaping, reconciled service value.');
+`,sandbox);

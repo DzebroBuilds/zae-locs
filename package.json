@@ -1,0 +1,11 @@
+{
+  "name": "zae-locs-studio-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Zae Locs studio booking and client management demo",
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^9.5.0"
+  }
+}
