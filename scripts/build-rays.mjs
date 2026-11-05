@@ -15,12 +15,12 @@ await build({
 
 // Content-addressed URLs prevent a previous effect bundle surviving a Pages update.
 let html = await readFile('dist/index.html', 'utf8');
-for (const extension of ['js', 'css']) {
-  const content = await readFile(`dist/light-rays.${extension}`);
+for (const [name, extension] of [['light-rays', 'js'], ['light-rays', 'css'], ['style', 'css'], ['polish', 'css']]) {
+  const content = await readFile(`dist/${name}.${extension}`);
   const hash = createHash('sha256').update(content).digest('hex').slice(0, 12);
-  const filename = `light-rays.${hash}.${extension}`;
+  const filename = `${name}.${hash}.${extension}`;
   await writeFile(`dist/${filename}`, content);
-  const pattern = new RegExp(`light-rays(?:\\.[a-f0-9]{12})?\\.${extension}(?:\\?[^"']*)?`, 'g');
+  const pattern = new RegExp(`${name}(?:\\.[a-f0-9]{12})?\\.${extension}(?:\\?[^"']*)?`, 'g');
   html = html.replace(pattern, filename);
 }
 await writeFile('dist/index.html', html);

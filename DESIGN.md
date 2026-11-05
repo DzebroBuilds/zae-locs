@@ -15,3 +15,5 @@ The user requested GlassSurface for the hero. Use the 320×76 rounded surface as
 The user requested VariableProximity on the hero title. Roboto Flex replaces the display face in this title only so its weight and optical-size axes can respond to proximity. Preserve the brand label, requested interaction configuration, and reduced-motion fallback.
 
 The user requested ScrollExpand for the studio portrait after the hero. Keep the original component source unchanged, viewport scrolling, zoom 1.35, existing concept-image disclosure, and static reduced-motion alternative. Do not nest this sticky stage in an overflow-hidden ancestor.
+
+The user selected a dark theme for the entire website and dashboard. Use charcoal-evergreen #0d1513 for the main ground, #16211f for panels and forms, #e5ebe6 for text, #a3b3ac for secondary text, and #285b49 for primary actions. Keep the blue ray stage, glass, photographs, and existing motion. Never restore the old cream page background without an explicit request.

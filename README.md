@@ -39,3 +39,7 @@ The hero title uses the exact React Bits JS-CSS VariableProximity registry sourc
 ## ScrollExpand
 
 The studio portrait uses the exact React Bits JS-CSS ScrollExpand source from https://reactbits.dev/r/ScrollExpand-JS-CSS.json. It uses the existing art-1.jpg concept portrait, window scrolling, zoom 1.35, and studio copy. The reveal is outside the clipped hero so viewport sticky positioning works. Reduced-motion visitors receive a still portrait with all copy visible. The registry lists no extra packages.
+
+## Dark theme
+
+The public website, booking dialogs, client dashboard, and email previews use dark charcoal/evergreen surfaces with readable light text. Main and secondary text and button labels were checked for at least 4.5:1 contrast. CSS filenames are content-versioned by the build to prevent old light styles surviving an update.
