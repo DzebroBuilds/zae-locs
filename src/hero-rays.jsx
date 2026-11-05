@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import LightRays from './components/LightRays';
 import GlassSurface from './components/GlassSurface';
 import VariableProximity from './components/VariableProximity';
+import ScrollExpand from './components/ScrollExpand';
 import './hero-rays.css';
 
 function HeroRays() {
@@ -100,3 +101,34 @@ function HeroTitle() {
 
 const title = document.getElementById('hero-title');
 if (title) createRoot(title).render(<HeroTitle />);
+
+function StudioPortrait() {
+  const [reduced, setReduced] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  useEffect(() => {
+    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const update = event => setReduced(event.matches);
+    preference.addEventListener('change', update);
+    return () => preference.removeEventListener('change', update);
+  }, []);
+  const content = <>
+    <h2>Made for you.</h2>
+    <p>Intentional loc care and styling by Zae at Renton Landing.</p>
+    <span className="portrait-credit">Concept imagery</span>
+  </>;
+  if (reduced) return <div className="portrait-still">
+    <img src="art-1.jpg" alt="Concept portrait celebrating natural locs" width="627" height="627" />
+    <div className="portrait-still-copy">{content}</div>
+  </div>;
+  return <ScrollExpand
+    src="art-1.jpg"
+    alt="Concept portrait celebrating natural locs"
+    title="Rooted here."
+    scrollHint="Scroll"
+    useWindowScroll
+    mediaZoom={1.35}
+    className="studio-scroll-expand"
+  >{content}</ScrollExpand>;
+}
+
+const portrait = document.getElementById('studio-scroll');
+if (portrait) createRoot(portrait).render(<StudioPortrait />);

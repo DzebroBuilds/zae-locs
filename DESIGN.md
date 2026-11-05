@@ -13,3 +13,5 @@ The hero uses the user-requested React Bits LightRays: blue #3b82f6 on a dark na
 The user requested GlassSurface for the hero. Use the 320×76 rounded surface as a real booking control over the blue rays, preserving legible text and keyboard focus. This explicit glass request overrides the general preference for flat surfaces in this specific control. Keep the registry component source unchanged.
 
 The user requested VariableProximity on the hero title. Roboto Flex replaces the display face in this title only so its weight and optical-size axes can respond to proximity. Preserve the brand label, requested interaction configuration, and reduced-motion fallback.
+
+The user requested ScrollExpand for the studio portrait after the hero. Keep the original component source unchanged, viewport scrolling, zoom 1.35, existing concept-image disclosure, and static reduced-motion alternative. Do not nest this sticky stage in an overflow-hidden ancestor.

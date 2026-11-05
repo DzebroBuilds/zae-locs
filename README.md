@@ -35,3 +35,7 @@ The hero booking control uses the exact React Bits GlassSurface JS-CSS component
 ## VariableProximity
 
 The hero title uses the exact React Bits JS-CSS VariableProximity registry source from https://reactbits.dev/r/VariableProximity-JS-CSS.json. Its stylesheet loads Roboto Flex with optical-size and weight axes. The label is ZAE LOCS; the requested weight/optical-size ranges, radius 100, linear falloff, smoothing 0.2, scale 1, lift 0, and idleWave false are preserved. Font size is 64px with a phone-size adjustment. Reduced motion shows a static title. No extra packages are listed by the registry.
+
+## ScrollExpand
+
+The studio portrait uses the exact React Bits JS-CSS ScrollExpand source from https://reactbits.dev/r/ScrollExpand-JS-CSS.json. It uses the existing art-1.jpg concept portrait, window scrolling, zoom 1.35, and studio copy. The reveal is outside the clipped hero so viewport sticky positioning works. Reduced-motion visitors receive a still portrait with all copy visible. The registry lists no extra packages.
