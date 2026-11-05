@@ -7,3 +7,5 @@ The public site persuades and showcases. Booking and studio management operate: 
 Keep the visible Developed by OASISWEB&AI credit. This is a browser-local concept demo: no live email, payment, or real booking claims. Concept photography must stay identified as such until replaced with Zae-approved work.
 
 Polish applies Impeccable and Emil design engineering guidance directly. Impeccable's optional context engine was unavailable; no helper downloaded or hooks installed.
+
+The hero uses the user-requested React Bits LightRays: blue #3b82f6 on a dark navy 600px stage. This explicit effect overrides the evergreen-only accent guidance in this region. Use the original component source and keep custom integration in the wrapper.

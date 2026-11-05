@@ -18,8 +18,12 @@ All client data is fictional. Bookings, notes, and campaigns are saved only in t
 
 ## Dependencies
 
-Material UI and Emotion are recorded in `package.json` and `package-lock.json` for future React work. The present demo is plain HTML, CSS, and JavaScript and requires no package installation or build to publish.
+Material UI and Emotion are recorded in `package.json` and `package-lock.json` for future React work. The booking and dashboard use plain HTML, CSS, and JavaScript. The hero uses a React island bundled with esbuild. Run `npm ci` and `npm run build` before publishing. The Pages workflow does this automatically.
 
 ## Checks
 
 Run `node --check dist/app.js` and `node verify.cjs`.
+
+## LightRays
+
+The JavaScript/plain-CSS component in `src/components/LightRays.jsx` and `LightRays.css` is copied unchanged from the [React Bits registry](https://reactbits.dev/r/LightRays-JS-CSS.json). The registry lists no additional dependencies. React, React DOM, and esbuild provide the mount and build. `src/hero-rays.jsx` applies the requested blue ray configuration inside a 600px hero, adds a pause control, and shows a still background for reduced-motion preferences. Without WebGL, the heading and booking controls remain usable. [Component documentation](https://reactbits.dev/backgrounds/light-rays).
