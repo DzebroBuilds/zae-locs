@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import LightRays from './components/LightRays';
+import GlassSurface from './components/GlassSurface';
 import './hero-rays.css';
 
 function HeroRays() {
@@ -31,6 +32,34 @@ function HeroRays() {
         cursorShadow={!paused}
         clickPulse={!paused}
       />}
+    </div>
+    <div className="hero-glass-booking">
+      <GlassSurface
+        width={320}
+        height={76}
+        borderRadius={38}
+        distortionScale={-180}
+        displace={0.5}
+        backgroundOpacity={0.1}
+        borderWidth={0.07}
+        brightness={50}
+        opacity={0.93}
+        blur={11}
+        saturation={1}
+        redOffset={0}
+        greenOffset={10}
+        blueOffset={20}
+        refraction
+        renderer="auto"
+        style={{ maxWidth: '100%' }}
+      >
+        <button className="glass-booking-button" type="button" onClick={() => document.querySelector('header [data-book]')?.click()}>
+          Book your visit
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+      </GlassSurface>
     </div>
     {!reduced && <button className="rays-toggle" type="button" aria-pressed={paused} onClick={() => setPaused(value => !value)}>
       {paused ? 'Resume light effect' : 'Pause light effect'}

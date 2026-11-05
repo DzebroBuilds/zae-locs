@@ -9,3 +9,5 @@ Keep the visible Developed by OASISWEB&AI credit. This is a browser-local concep
 Polish applies Impeccable and Emil design engineering guidance directly. Impeccable's optional context engine was unavailable; no helper downloaded or hooks installed.
 
 The hero uses the user-requested React Bits LightRays: blue #3b82f6 on a dark navy 600px stage. This explicit effect overrides the evergreen-only accent guidance in this region. Use the original component source and keep custom integration in the wrapper.
+
+The user requested GlassSurface for the hero. Use the 320×76 rounded surface as a real booking control over the blue rays, preserving legible text and keyboard focus. This explicit glass request overrides the general preference for flat surfaces in this specific control. Keep the registry component source unchanged.

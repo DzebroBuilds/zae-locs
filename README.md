@@ -27,3 +27,7 @@ Run `node --check dist/app.js` and `node verify.cjs`.
 ## LightRays
 
 The JavaScript/plain-CSS component in `src/components/LightRays.jsx` and `LightRays.css` is copied unchanged from the [React Bits registry](https://reactbits.dev/r/LightRays-JS-CSS.json). The registry lists no additional dependencies. React, React DOM, and esbuild provide the mount and build. `src/hero-rays.jsx` applies the requested blue ray configuration inside a 600px hero, adds a pause control, and shows a still background for reduced-motion preferences. Without WebGL, the heading and booking controls remain usable. [Component documentation](https://reactbits.dev/backgrounds/light-rays).
+
+## GlassSurface
+
+The hero booking control uses the exact React Bits GlassSurface JS-CSS component from https://reactbits.dev/r/GlassSurface-JS-CSS.json. It uses the supplied 320×76 rounded configuration and refraction settings. The registry lists no extra dependencies. Logo-shaped and photo-backdrop variants remain available in the component for approved assets; placeholder /logo.svg and /photo.jpg are not published.
