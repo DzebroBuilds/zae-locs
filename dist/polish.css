@@ -1,7 +1,7 @@
 /* Shared refinements: keep the studio's poster identity, make everyday tasks quiet. */
 :root{--ease-out:cubic-bezier(.23,1,.32,1);--press:140ms;--enter:220ms;--control-min:44px}
-::selection{background:#38624d;color:#f1f1ea}
-html{scrollbar-color:#587461 var(--bg);scrollbar-width:thin}
+::selection{background:#305a88;color:#f1f1ea}
+html{scrollbar-color:#587594 var(--bg);scrollbar-width:thin}
 html.dialog-open{overflow:hidden}
 input,textarea{caret-color:var(--ink)}
 input::placeholder,textarea::placeholder{color:var(--muted);opacity:1}
@@ -23,7 +23,7 @@ a:focus-visible{border-radius:2px}
 .gallery figure:nth-child(2) img{height:auto;aspect-ratio:1/1}
 .services .section-intro{align-items:flex-end}
 .service{background:var(--paper);padding:24px 28px;column-gap:24px}
-.service:nth-child(even){background:#1b2923}
+.service:nth-child(even){background:rgba(19,38,60,.82)}
 .service button{text-decoration:none;min-width:110px;background:var(--paper);padding:10px 16px;font-size:14px}
 .service strong{line-height:1.25;display:block}
 .service .price{font-size:23px}
@@ -70,7 +70,7 @@ aside nav button{min-height:44px}
 @keyframes dialog-in{from{opacity:0;transform:translateY(8px) scale(.985)}to{opacity:1;transform:none}}
 @media(hover:hover) and (pointer:fine){
  .service button:hover{background:var(--action);color:var(--white)}
- .time:not(.selected):hover{background:#294636;border-color:#7f9e8b}
+ .time:not(.selected):hover{background:#254768;border-color:#8eafcc}
  header nav a:hover{color:var(--accent)}
  .close:hover{background:var(--tint)}
 }

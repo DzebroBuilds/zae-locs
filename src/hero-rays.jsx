@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
+import { createPortal } from 'react-dom';
 import LightRays from './components/LightRays';
 import GlassSurface from './components/GlassSurface';
 import VariableProximity from './components/VariableProximity';
@@ -16,7 +17,7 @@ function HeroRays() {
     return () => preference.removeEventListener('change', update);
   }, []);
   return <>
-    <div className="hero-rays-canvas" aria-hidden="true" style={{ width: '100%', height: '600px', position: 'relative' }}>
+    {createPortal(<div className="hero-rays-canvas" aria-hidden="true" style={{ width: '100%', height: '100%', position: 'relative' }}>
       {!reduced && <LightRays
         raysOrigin="top-center"
         raysColor="#3b82f6"
@@ -34,7 +35,7 @@ function HeroRays() {
         cursorShadow={!paused}
         clickPulse={!paused}
       />}
-    </div>
+    </div>, document.getElementById('site-background'))}
     <div className="hero-glass-booking">
       <GlassSurface
         width={320}

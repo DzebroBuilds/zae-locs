@@ -3,7 +3,7 @@
   isolation: isolate;
   width: 100%;
   height: 600px;
-  background: #081426;
+  background: transparent;
   color: #fffefa;
   display: flex;
   flex-direction: column;
@@ -13,12 +13,22 @@
 }
 #hero-rays { position: absolute; inset: 0; z-index: -1; }
 .hero-rays-canvas { pointer-events: none; }
+body { isolation: isolate; }
+#site-background {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  z-index: -1;
+  pointer-events: none;
+  background: #081426;
+}
 .hero-light-scene .hero-intro { position: relative; gap: 32px; }
 .hero-light-scene .hero-intro p { color: #fffefa; max-width: 33ch; }
 .hero-light-scene h1 { margin: 0; font-size: 11.55vw; color: #fffefa; }
 .hero .hero-photo { margin-top: 20px; }
-.studio-reveal { margin-top: 24px; background: #081426; color: #fffefa; }
-.studio-scroll-expand .scroll-expand__stage { background: #081426; }
+.studio-reveal { margin-top: 24px; background: transparent; color: #fffefa; }
+.studio-scroll-expand .scroll-expand__stage { background: transparent; }
 .studio-scroll-expand .scroll-expand__media { object-position: 50% 35%; }
 .studio-scroll-expand .scroll-expand__overlay {
   align-items: flex-start;

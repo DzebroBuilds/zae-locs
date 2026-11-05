@@ -43,3 +43,7 @@ The studio portrait uses the exact React Bits JS-CSS ScrollExpand source from ht
 ## Dark theme
 
 The public website, booking dialogs, client dashboard, and email previews use dark charcoal/evergreen surfaces with readable light text. Main and secondary text and button labels were checked for at least 4.5:1 contrast. CSS filenames are content-versioned by the build to prevent old light styles surviving an update.
+
+## Full-site background
+
+LightRays is mounted into a fixed, full-viewport background outside the clipped hero, so the same effect covers the header, hero, gallery, services, and dashboard as the visitor scrolls. The hero glass control and pause control remain in the hero. Broad page surfaces are transparent; content panels use dark translucent navy for readability.
